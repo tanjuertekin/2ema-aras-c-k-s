@@ -13,7 +13,7 @@ let botState = {
     status: "running",
     startTime: new Date().toISOString(),
     lastScanTime: "Henüz taranmadı",
-    timeframe: "4h",
+    timeframe: "1h",
     piyasaYon: "Bekleniyor",
     btcYon: "Bekleniyor",
     tarananSonuclar: [],
@@ -312,7 +312,7 @@ app.get('/', (req, res) => {
 });
 
 // Zamanlayıcılar (Arka Planda Sürekli Çalışır)
-setInterval(arkaPlanTaramasiYap, 10 * 60 * 1000); // Her 10 dakikada bir tarama
+setInterval(arkaPlanTaramasiYap, 5 * 60 * 1000); // Her 10 dakikada bir tarama
 setInterval(acikIslemleriTakipEt, 10000); // Her 10 saniyede bir fiyat takibi
 
 app.listen(PORT, () => {
